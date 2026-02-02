@@ -1,181 +1,267 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>SkyWay Travels</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+    <title>Northview College</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <!-- Tailwind CDN -->
-  <script src="https://cdn.tailwindcss.com"></script>
+    <!-- CSS -->
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, Helvetica, sans-serif;
+        }
 
-  <!-- Custom Animations -->
-  <style>
-    /* Hero animation */
-    .fade-zoom {
-      animation: fadeZoom 1.2s ease-out forwards;
-    }
+        body {
+            background-color: #f4f8fb;
+            color: #333;
+        }
 
-    @keyframes fadeZoom {
-      0% {
-        opacity: 0;
-        transform: scale(0.95);
-      }
-      100% {
-        opacity: 1;
-        transform: scale(1);
-      }
-    }
+        /* HEADER */
+        header {
+            background-color: #0b3c5d;
+            color: white;
+            padding: 15px 40px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
 
-    /* Card hover lift */
-    .lift-hover {
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-    }
-    .lift-hover:hover {
-      transform: translateY(-8px);
-      box-shadow: 0 15px 30px rgba(0,0,0,0.15);
-    }
+        .logo-area {
+            display: flex;
+            align-items: center;
+        }
 
-    /* Pricing hover */
-    .price-hover {
-      transition: border-color 0.3s ease, transform 0.3s ease;
-    }
-    .price-hover:hover {
-      border-color: #38bdf8;
-      transform: scale(1.03);
-    }
-  </style>
+        .logo {
+            width: 50px;
+            height: 50px;
+            background-color: white;
+            border-radius: 50%;
+            margin-right: 12px;
+        }
+
+        .college-name {
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+        nav a {
+            color: white;
+            margin: 0 10px;
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        nav a:hover {
+            text-decoration: underline;
+        }
+
+        .apply-btn {
+            background-color: #f9c74f;
+            color: black;
+            padding: 10px 16px;
+            border-radius: 5px;
+            font-weight: bold;
+            text-decoration: none;
+            margin-left: 15px;
+        }
+
+        .apply-btn:hover {
+            background-color: #f4b400;
+        }
+
+        /* EXPLORE SECTION */
+        .explore {
+            padding: 50px;
+            text-align: center;
+        }
+
+        .explore h2 {
+            font-size: 32px;
+            margin-bottom: 40px;
+            color: #0b3c5d;
+        }
+
+        .cards {
+            display: flex;
+            justify-content: center;
+            gap: 25px;
+            flex-wrap: wrap;
+        }
+
+        .card {
+            background-color: white;
+            width: 300px;
+            padding: 25px;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        }
+
+        .icon {
+            font-size: 40px;
+            margin-bottom: 15px;
+            color: #0b3c5d;
+        }
+
+        .card p {
+            margin: 15px 0;
+            font-size: 15px;
+        }
+
+        .card button {
+            background-color: #0b3c5d;
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .card button:hover {
+            background-color: #145a86;
+        }
+
+        /* EVENTS */
+        .events {
+            margin-top: 40px;
+        }
+
+        .events button {
+            background-color: #1c7ed6;
+            color: white;
+            border: none;
+            padding: 12px 25px;
+            border-radius: 6px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        .events button:hover {
+            background-color: #1864ab;
+        }
+
+        /* FOOTER */
+        footer {
+            background-color: #0b3c5d;
+            color: white;
+            padding: 30px;
+            margin-top: 50px;
+        }
+
+        .footer-links {
+            text-align: center;
+            margin-bottom: 15px;
+        }
+
+        .footer-links a {
+            color: white;
+            margin: 0 10px;
+            text-decoration: none;
+        }
+
+        .footer-links a:hover {
+            text-decoration: underline;
+        }
+
+        .social-icons {
+            text-align: center;
+            margin: 15px 0;
+            font-size: 22px;
+        }
+
+        .social-icons a {
+            color: white;
+            margin: 0 8px;
+            text-decoration: none;
+        }
+
+        .contact-info {
+            text-align: center;
+            font-size: 14px;
+            margin-top: 10px;
+        }
+    </style>
 </head>
+<body>
 
-<body class="font-sans bg-sky-50 text-gray-800">
-
-  <!-- HEADER -->
-  <header class="bg-sky-600 text-white sticky top-0 z-50">
-    <div class="max-w-7xl mx-auto flex justify-between items-center p-4">
-      <h1 class="text-2xl font-bold">SkyWay Travels</h1>
-      <nav class="space-x-6">
-        <a href="#" class="hover:text-yellow-300">Home</a>
-        <a href="#destinations" class="hover:text-yellow-300">Destinations</a>
-        <a href="#packages" class="hover:text-yellow-300">Packages</a>
-        <a href="#contact" class="hover:text-yellow-300">Contact</a>
-      </nav>
-    </div>
-  </header>
-
-  <!-- HERO SECTION -->
-  <section class="h-[80vh] bg-cover bg-center flex items-center justify-center"
-    style="background-image:url('https://images.unsplash.com/photo-1507525428034-b723cf961d3e');">
-    <div class="bg-black/50 p-10 rounded-xl text-center">
-      <h2 class="text-4xl md:text-5xl font-bold text-white fade-zoom">
-        Explore the World With Us
-      </h2>
-      <p class="text-sky-200 mt-4">
-        Discover breathtaking destinations and unforgettable experiences
-      </p>
-    </div>
-  </section>
-
-  <!-- DESTINATIONS -->
-  <section id="destinations" class="max-w-7xl mx-auto py-16 px-6">
-    <h2 class="text-3xl font-bold text-center mb-12 text-sky-700">
-      Popular Destinations
-    </h2>
-
-    <div class="grid gap-8 md:grid-cols-3">
-      
-      <div class="bg-white rounded-xl overflow-hidden lift-hover">
-        <img src="https://images.unsplash.com/photo-1502602898657-3e91760cbb34" alt="Paris">
-        <div class="p-6">
-          <h3 class="text-xl font-bold mb-2">Paris</h3>
-          <p>The city of love, fashion, and iconic landmarks.</p>
+    <!-- HEADER -->
+    <header>
+        <div class="logo-area">
+            <div class="logo"></div>
+            <div class="college-name">Northview College</div>
         </div>
-      </div>
 
-      <div class="bg-white rounded-xl overflow-hidden lift-hover">
-        <img src="https://images.unsplash.com/photo-1548013146-72479768bada" alt="Bali">
-        <div class="p-6">
-          <h3 class="text-xl font-bold mb-2">Bali</h3>
-          <p>Tropical paradise with beaches and rich culture.</p>
+        <div>
+            <nav>
+                <a href="#">Home</a>
+                <a href="#">About Us</a>
+                <a href="#">Academics</a>
+                <a href="#">Admissions</a>
+                <a href="#">Campus Life</a>
+                <a href="#">Contact</a>
+                <a href="#" class="apply-btn">Apply Now</a>
+            </nav>
         </div>
-      </div>
+    </header>
 
-      <div class="bg-white rounded-xl overflow-hidden lift-hover">
-        <img src="https://images.unsplash.com/photo-1518684079-3c830dcef090" alt="Dubai">
-        <div class="p-6">
-          <h3 class="text-xl font-bold mb-2">Dubai</h3>
-          <p>Luxury, adventure, and futuristic cityscapes.</p>
+    <!-- EXPLORE OUR COLLEGE -->
+    <section class="explore">
+        <h2>Explore Our College</h2>
+
+        <div class="cards">
+
+            <!-- About Us -->
+            <div class="card">
+                <div class="icon">🏛️</div>
+                <h3>About Us</h3>
+                <p>Learn about our history, values, and commitment to excellence.</p>
+                <button>Learn More</button>
+            </div>
+
+            <!-- Our Programs -->
+            <div class="card">
+                <div class="icon">☀️</div>
+                <h3>Our Programs</h3>
+                <p>Explore innovative science projects by our talented students and faculty.</p>
+                <button>View Programs</button>
+            </div>
+
+            <!-- Campus Life -->
+            <div class="card">
+                <div class="icon">⛰️</div>
+                <h3>Campus Life</h3>
+                <p>Participate in clubs, sports, and social activities on campus.</p>
+                <button>Discover More</button>
+            </div>
+
         </div>
-      </div>
 
-    </div>
-  </section>
+        <!-- EVENTS -->
+        <div class="events">
+            <button>View All Events</button>
+        </div>
+    </section>
 
-  <!-- PACKAGES -->
-  <section id="packages" class="bg-white py-16 px-6">
-    <h2 class="text-3xl font-bold text-center mb-12 text-sky-700">
-      Travel Packages
-    </h2>
+    <!-- FOOTER -->
+    <footer>
+        <div class="footer-links">
+            <a href="#">About Us</a> |
+            <a href="#">Contact</a> |
+            <a href="#">Admissions</a>
+        </div>
 
-    <div class="max-w-6xl mx-auto grid gap-8 md:grid-cols-3">
+        <div class="social-icons">
+            <a href="#">LinkedIn</a>
+            <a href="#">Twitter</a>
+            <a href="#">Facebook</a>
+        </div>
 
-      <!-- Basic -->
-      <div class="border rounded-xl p-8 text-center price-hover">
-        <h3 class="text-xl font-bold mb-4">Basic</h3>
-        <p class="text-3xl font-bold mb-4 text-sky-600">$499</p>
-        <ul class="space-y-2 mb-6">
-          <li>3 Days / 2 Nights</li>
-          <li>Hotel Stay</li>
-          <li>City Tour</li>
-        </ul>
-        <button class="bg-sky-500 text-white px-6 py-2 rounded-lg hover:bg-sky-600">
-          Book Now
-        </button>
-      </div>
-
-      <!-- Best Value -->
-      <div class="border-4 border-orange-400 rounded-xl p-8 text-center price-hover bg-sky-50">
-        <h3 class="text-xl font-bold mb-4">Premium ⭐</h3>
-        <p class="text-3xl font-bold mb-4 text-orange-500">$899</p>
-        <ul class="space-y-2 mb-6">
-          <li>5 Days / 4 Nights</li>
-          <li>Resort Stay</li>
-          <li>Guided Tours</li>
-        </ul>
-        <button class="bg-orange-500 text-white px-6 py-2 rounded-lg hover:bg-orange-600">
-          Book Now
-        </button>
-      </div>
-
-      <!-- Luxury -->
-      <div class="border rounded-xl p-8 text-center price-hover">
-        <h3 class="text-xl font-bold mb-4">Luxury</h3>
-        <p class="text-3xl font-bold mb-4 text-green-600">$1499</p>
-        <ul class="space-y-2 mb-6">
-          <li>7 Days / 6 Nights</li>
-          <li>5-Star Hotels</li>
-          <li>Private Guide</li>
-        </ul>
-        <button class="bg-green-500 text-white px-6 py-2 rounded-lg hover:bg-green-600">
-          Book Now
-        </button>
-      </div>
-
-    </div>
-  </section>
-
-  <!-- FOOTER -->
-  <footer id="contact" class="bg-sky-700 text-white py-8">
-    <div class="max-w-7xl mx-auto text-center space-y-4">
-      <p>📧 info@skywaytravels.com | ☎ +91 98765 43210</p>
-      <div class="space-x-4">
-        <a href="#" class="hover:text-yellow-300">Facebook</a>
-        <a href="#" class="hover:text-yellow-300">Instagram</a>
-        <a href="#" class="hover:text-yellow-300">Twitter</a>
-      </div>
-      <p class="text-sm text-sky-200">
-        © 2026 SkyWay Travels. All rights reserved.
-      </p>
-    </div>
-  </footer>
+        <div class="contact-info">
+            📞 +1 234 567 8900 | ✉️ info@northviewcollege.edu
+        </div>
+    </footer>
 
 </body>
 </html>
